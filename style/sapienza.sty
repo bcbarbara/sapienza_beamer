@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Copyright (C) Bárbara Barros Carlos
+% Written by Bárbara Barros Carlos <barros@diag.uniroma1.it>, October 2019
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% useful packages
+\usepackage{comment}
+
+% define location for all figures
+\graphicspath{{figures/}}
+
+% define colors from Sapienza
+\definecolor{sapienzaBlue}{RGB}{0,45,153}
+\definecolor{sapienzaRed}{RGB}{164,28,0}
+
+% customize itemize and enumerate
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+\setbeamercolor{itemize item}{ fg=black}
+\setbeamercolor{itemize subitem}{ fg=black}
+\setbeamercolor{itemize subsubitem}{ fg=black}
+\setbeamercolor{itemize subsubsubitem}{ fg=black}
+\setbeamercolor{enumerate item}{ fg=black}
+\setbeamercolor{enumerate subitem}{ fg=black}
+\setbeamercolor{enumerate subsubitem}{ fg=black}
+\setbeamercolor{enumerate subsubsubitem}{ fg=black}
+
+% update colors of block environment
+\setbeamercolor{block title}{bg=while,fg=sapienzaBlue}
+
+% change header color to university blue
+\setbeamercolor{headline}{bg=white,fg=sapienzaBlue}
+\setbeamercolor*{frametitle}{parent=headline}
+
+% title and subtitle color and background color
+\setbeamercolor{title}{bg=white,fg=sapienzaRed}
+\setbeamercolor{subtitle}{bg=white,fg=sapienzaBlue}
+\setbeamercolor{author}{bg=white,fg=black}
+
+% title and subtitle bold
+\setbeamerfont{title}{series=\bfseries}
+\setbeamerfont{subtitle}{series=\bfseries}
+\setbeamerfont{author}{series=\bfseries}
+
+\setbeamerfont{title}{size=\tiny}		
+
+% uncomment to add and modify footer
+%\begin{comment}
+\setbeamercolor{footlinecolor}{bg=white,fg=black}
+\makeatother
+\setbeamertemplate{footline}
+{%
+	\leavevmode%
+	\hbox{\begin{beamercolorbox}[wd=.6\paperwidth,ht=1.5ex,dp=2.125ex,leftskip=.3cm,rightskip=.3cm]{footlinecolor}%
+	\textit{\insertshortauthor: \insertshorttitle - \textbf{\insertshortsubtitle}}		
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=.4\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{footlinecolor}%
+		\usebeamerfont{author in head/foot}\hfill\insertframenumber%\insertpagenumber
+	\end{beamercolorbox}}%
+	\vskip0pt%
+}
+\makeatletter
+%\end{comment}
+
+% uncomment to remove navigation buttons
+\setbeamertemplate{navigation symbols}{}
+
+
+% modify title slide
+\newcommand{\InsertTitle}{
+	{
+		%\setbeamertemplate{logo}{} % remove logo (if any)
+		\setbeamertemplate{headline}{} % remove header (if any)
+		\setbeamertemplate{footline}{} % remove footer (if any)
+		\begin{frame}[noframenumbering] % do not count title frame in frame numbers
+			\titlepage
+			\vspace{-15pt}
+			\begin{figure}
+				\centering
+				\includegraphics[scale = 0.35]{diag-logo.png}
+			\end{figure}
+		\end{frame}
+	}
+}
+
+% correct font in math mode
+\usefonttheme[onlymath]{serif}

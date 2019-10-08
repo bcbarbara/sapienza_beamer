@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Copyright (C) Bárbara Barros Carlos
+% Written by Bárbara Barros Carlos <barros@diag.uniroma1.it>, October 2019
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[10pt]{beamer}
+\usetheme{boxes}
+
+% load Sapienza style
+\usepackage{style/sapienza}
+\usepackage{gillius2}
+
+
+\setbeamertemplate{title page}
+{
+   \vbox{}
+   \vspace{-20pt}
+   \begin{centering}
+       \vskip0.05em%%
+       {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}         
+       \vskip2.25em%
+     \begin{beamercolorbox}[sep=8pt,center]{title}
+       \usebeamerfont{title}\inserttitle\par%
+        \begin{beamercolorbox}[sep=3pt,center]{author}
+       \usebeamerfont{author}\insertauthor
+     \end{beamercolorbox}
+       \ifx\insertsubtitle\@empty%
+       \else%
+         \vspace{48pt}
+         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+       \fi%     
+     \end{beamercolorbox}%
+     \vskip1em\par
+     \begin{beamercolorbox}[sep=8pt,center]{institute}
+       \usebeamerfont{institute}\insertinstitute
+     \end{beamercolorbox}
+   \end{centering}
+   \vfill
+}
+
+%--------------------------------------------------
+% TITLE
+%--------------------------------------------------
+
+% NOTE: what's in [ ] goes to footer for the fields title, author and date
+\title[AIS]{\large Autonomous and Intelligent Systems}
+\author[B\'arbara]{B\'arbara Barros Carlos}
+\date{}
+\subtitle[Robot Motion Planning]{\huge Robot Motion Planning}
+%\institute{Robotics Lab, Sapienza University of Rome}
+
+
+%--------------------------------------------------
+% Usefull packages
+%--------------------------------------------------
+
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\setbeamercovered{transparent}
+\usepackage{tikz}
+\usetikzlibrary{overlay-beamer-styles}
+ \tikzset{
+    highlight on/.style={alt={#1{fill=red!80!black,color=red!80!black}{fill=gray!30!white,color=gray!30!white}}},
+}
+
+
+\definecolor{darkpastelgreen}{rgb}{0.01, 0.75, 0.24}
+\definecolor{naplesyellow}{rgb}{1.0, 0.7, 0.0}
+
+\begin{document}
+
+\InsertTitle
+
+\begin{frame}{Overview}
+	%\framesubtitle{An optional subtitle}
+	
+	\begin{enumerate}
+		\item Goals
+		\item Methodology
+		\item Timeline
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}{Goals}
+\begin{itemize}
+		\item one
+		\item two
+		\item three
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Methodology}
+\framesubtitle{simulation}
+\begin{itemize}
+	\item this
+	\item and
+	\item that
+	\end{itemize}
+\end{frame}
+
+\end{document}
