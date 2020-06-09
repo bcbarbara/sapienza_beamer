@@ -1,57 +1,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Copyright (C) Bárbara Barros Carlos
-% Written by Bárbara Barros Carlos <barros@diag.uniroma1.it>, October 2019
+% Written by Bárbara Barros Carlos <barros@diag.uniroma1.it>, June 2020
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\documentclass[10pt]{beamer}
-\usetheme{boxes}
-
-% load Sapienza style
-\usepackage{style/sapienza}
-\usepackage{gillius2}
-
-
-\setbeamertemplate{title page}
-{
-   \vbox{}
-   \vspace{-20pt}
-   \begin{centering}
-       \vskip0.05em%%
-       {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}         
-       \vskip2.25em%
-     \begin{beamercolorbox}[sep=8pt,center]{title}
-       \usebeamerfont{title}\inserttitle\par%
-        \begin{beamercolorbox}[sep=3pt,center]{author}
-       \usebeamerfont{author}\insertauthor
-     \end{beamercolorbox}
-       \ifx\insertsubtitle\@empty%
-       \else%
-         \vspace{48pt}
-         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-       \fi%     
-     \end{beamercolorbox}%
-     \vskip1em\par
-     \begin{beamercolorbox}[sep=8pt,center]{institute}
-       \usebeamerfont{institute}\insertinstitute
-     \end{beamercolorbox}
-   \end{centering}
-   \vfill
-}
-
-%--------------------------------------------------
-% TITLE
-%--------------------------------------------------
-
-% NOTE: what's in [ ] goes to footer for the fields title, author and date
-\title[AIS]{\large Autonomous and Intelligent Systems}
-\author[B\'arbara]{B\'arbara Barros Carlos}
-\date{}
-\subtitle[Robot Motion Planning]{\huge Robot Motion Planning}
-%\institute{Robotics Lab, Sapienza University of Rome}
-
+\documentclass[aspectratio=169]{beamer}
+\usecolortheme{whale}
+\usecolortheme{orchid}
 
 %--------------------------------------------------
 % Usefull packages
@@ -60,25 +17,59 @@
 \usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{amsmath}
+% Load Sapienza style
+\usepackage{style/sapienza}
+\usepackage{gillius2}
 
-\setbeamercovered{transparent}
-\usepackage{tikz}
-\usetikzlibrary{overlay-beamer-styles}
- \tikzset{
-    highlight on/.style={alt={#1{fill=red!80!black,color=red!80!black}{fill=gray!30!white,color=gray!30!white}}},
+\setbeamercolor{itemize subitem}{fg=gray!50}
+
+%--------------------------------------------------
+% COVER
+%--------------------------------------------------
+\setbeamertemplate{title page}
+{
+   \vbox{}
+   \vspace{-30pt}
+   \begin{centering}
+       \vskip0.05em%%
+       {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}         
+       \vskip2.25em%
+     \begin{beamercolorbox}[sep=8pt,center]{title}
+       \usebeamerfont{title}\inserttitle\phantom{.}-- \insertdate \par%
+       \ifx\insertsubtitle\@empty%
+       \else%
+         \vspace{40pt}
+         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+       \fi%     
+     \end{beamercolorbox}%
+      \begin{beamercolorbox}[sep=5pt,center]{author}
+      	\usebeamerfont{author}\insertauthor
+      \end{beamercolorbox}
+     \vskip1em\par
+     \begin{beamercolorbox}[sep=8pt,center]{institute}
+       \usebeamerfont{institute}\insertinstitute
+     \end{beamercolorbox}
+   \end{centering}
+   \vspace{-0.5cm}
 }
+  
+%--------------------------------------------------
+% TITLE
+%--------------------------------------------------
 
-
-\definecolor{darkpastelgreen}{rgb}{0.01, 0.75, 0.24}
-\definecolor{naplesyellow}{rgb}{1.0, 0.7, 0.0}
+% NOTE: what's in [ ] goes to footer for the fields title, author and date
+\title[21st IFAC World Congress]{\small 21st IFAC World Congress 2020}
+\subtitle[LCL Constraint Formulation for Real-Time Motion Generation]{\Large Least Conservative Linearized Constraint Formulation for Real-Time Motion Generation}
+\author[B\'arbara]{\small \textbf{B\'arbara Barros Carlos}$^1$, Tommaso Sartor$^2$, Andrea Zanelli$^3$, \\ Moritz Diehl$^3$, and Giuseppe Oriolo$^1$}
+\date{July 2020}
+\institute{$^1$DIAG, Sapienza University of Rome, $^2$MECO Research Team, KU Leuven, \\$^3$SYSCOP, University of Freiburg}
 
 \begin{document}
 
 \InsertTitle
 
-\begin{frame}{Overview}
+\begin{frame}{\textbf{outline}}
 	%\framesubtitle{An optional subtitle}
-	
 	\begin{enumerate}
 		\item Goals
 		\item Methodology
@@ -87,22 +78,27 @@
 	
 \end{frame}
 
-\begin{frame}{Goals}
+\begin{frame}{\textbf{goals}}
 \begin{itemize}
 		\item one
+		\begin{itemize}
+			\item one
+			\item two
+		\end{itemize}
 		\item two
 		\item three
 	\end{itemize}
 \end{frame}
 
 
-\begin{frame}{Methodology}
+\begin{frame}{\textbf{methodology}}
 \framesubtitle{simulation}
-\begin{itemize}
-	\item this
-	\item and
-	\item that
-	\end{itemize}
+\begin{blueblock}{Observation 1}
+Text.
+\end{blueblock}
+\begin{redblock}{Observation 2}
+Text.
+\end{redblock}
 \end{frame}
 
 \end{document}

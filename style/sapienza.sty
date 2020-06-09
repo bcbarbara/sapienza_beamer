@@ -8,13 +8,16 @@
 
 % useful packages
 \usepackage{comment}
+\usepackage{booktabs,tabularx}
+
+\newcolumntype{b}{X}
 
 % define location for all figures
 \graphicspath{{figures/}}
 
 % define colors from Sapienza
 \definecolor{sapienzaBlue}{RGB}{0,45,153}
-\definecolor{sapienzaRed}{RGB}{164,28,0}
+\definecolor{sapienzaRed}{RGB}{144,35,57}
 
 % customize itemize and enumerate
 \setbeamertemplate{itemize items}[circle]
@@ -43,9 +46,20 @@
 % title and subtitle bold
 \setbeamerfont{title}{series=\bfseries}
 \setbeamerfont{subtitle}{series=\bfseries}
-\setbeamerfont{author}{series=\bfseries}
+%\setbeamerfont{author}{series=\bfseries}
 
 \setbeamerfont{title}{size=\tiny}		
+
+% block structures
+\newenvironment<>{redblock}[1]{%
+  \setbeamercolor{block title}{fg=white,bg=sapienzaRed!100!black}%
+  \begin{block}#2{#1}}{\end{block}}
+\newenvironment<>{blueblock}[1]{%
+  \setbeamercolor{block title}{fg=white,bg=sapienzaBlue!100!black}%
+  \begin{block}#2{#1}}{\end{block}}
+\addtobeamertemplate{blueblock}{%
+  \setlength{\textwidth}{0.9\textwidth}%
+}{}
 
 % uncomment to add and modify footer
 %\begin{comment}
@@ -54,14 +68,14 @@
 \setbeamertemplate{footline}
 {%
 	\leavevmode%
-	\hbox{\begin{beamercolorbox}[wd=.6\paperwidth,ht=1.5ex,dp=2.125ex,leftskip=.3cm,rightskip=.3cm]{footlinecolor}%
-	\textit{\insertshortauthor: \insertshorttitle \phantom{-}- \textbf{\insertshortsubtitle}}		
+	\hbox{\begin{beamercolorbox}[wd=0.6\paperwidth,ht=1.5ex,dp=2.125ex,leftskip=.3cm,rightskip=.9cm]{footlinecolor}%
+	\textcolor{sapienzaRed}{\rule{0.965\paperwidth}{1pt}}
+	\text{\textbf{\insertshorttitle}\hskip12em \insertshortsubtitle\hskip23.8em\hfill\insertframenumber}
 	\end{beamercolorbox}%
-	\begin{beamercolorbox}[wd=.4\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{footlinecolor}%
-		\usebeamerfont{author in head/foot}\hfill\insertframenumber%\insertpagenumber
-	\end{beamercolorbox}}%
+	}%
 	\vskip0pt%
 }
+
 \makeatletter
 %\end{comment}
 
@@ -77,10 +91,16 @@
 		\setbeamertemplate{footline}{} % remove footer (if any)
 		\begin{frame}[noframenumbering] % do not count title frame in frame numbers
 			\titlepage
-			\vspace{-15pt}
+			\vspace{15pt}
 			\begin{figure}
+			\begin{tabularx}{\textwidth}{X}
 				\centering
-				\includegraphics[scale = 0.35]{diag-logo.png}
+				\includegraphics[width=0.3\textwidth]{diag-logo.png}
+				\hspace{0.5cm}
+				\includegraphics[width=0.25\textwidth]{ku_leuven_logo.png}
+				\hspace{1cm}
+				\includegraphics[width=0.1\textwidth]{ufreiburg_logo.png}
+			\end{tabularx}
 			\end{figure}
 		\end{frame}
 	}
